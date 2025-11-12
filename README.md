@@ -16,12 +16,26 @@ When you run the script, it reads all the URLs stored in Sites.txt and opens eac
    python3 main.py
 4. The listed websites will open automatically in your default browser.
 
-## Example  
-If Sites.txt contains:
-https://www.google.com
-https://www.youtube.com
-https://github.com
-Running the script will open all three websites in separate tabs.
+# Website Opener Script
+
+This Python script opens multiple websites automatically by reading them from a text file or predefined configuration.
+
+## 🔧 Current Features
+- Opens a list of websites from `file.txt`
+- Normalizes URLs (adds `http://` if missing)
+- Opens each website in a new browser tab
+
+## 🚀 Upcoming Update
+I will add a **dictionary-based system** inside the code.  
+The script will access a dictionary containing **keys mapped to specific websites**, and based on the selected key, it will automatically open the related webpages.
+
+Example of the planned dictionary:
+
+sites = {
+    "social": ["https://instagram.com", "https://facebook.com"],
+    "work": ["https://github.com", "https://trello.com"],
+    "study": ["https://scholar.google.com", "https://wikipedia.org"]
+}
 
 ## License  
 This project is open-source and free to use." > README.md
