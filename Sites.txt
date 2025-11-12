@@ -1,7 +1,16 @@
 # Site for scripting
 
-https://chatgpt.com/
-https://ctipub-my.sharepoint.com/
-https://github.com/Leogo16
-https://pathfinder.w3schools.com/
-https://docs.python.org/3/
+siteList = {
+	'python' : {
+	 site1 : https://chatgpt.com/
+	 site2 : https://ctipub-my.sharepoint.com/
+	 site3 : https://github.com/Leogo16
+	 site4 : https://pathfinder.w3schools.com/
+	 site5 : https://docs.python.org/3
+	 },
+	'social' : {
+	site1 : https://www.tiktok.com/
+	site2 : https://www.youtube.com/
+	site3 : https://www.instagram.com/
+	}
+}
