@@ -26,16 +26,8 @@ This Python script opens multiple websites automatically by reading them from a 
 - Opens each website in a new browser tab
 
 ## 🚀 Upcoming Update
-I will add a **dictionary-based system** inside the code.  
-The script will access a dictionary containing **keys mapped to specific websites**, and based on the selected key, it will automatically open the related webpages.
-
-Example of the planned dictionary:
-
-sites = {
-    "social": ["https://instagram.com", "https://facebook.com"],
-    "work": ["https://github.com", "https://trello.com"],
-    "study": ["https://scholar.google.com", "https://wikipedia.org"]
-}
+I will add a function that prevents the script from opening websites that are already open.
+For example, if you run the script for the code category but GitHub is already open in your browser, the script will detect this and will not open a duplicate tab.
 
 ## License  
 This project is open-source and free to use." > README.md
