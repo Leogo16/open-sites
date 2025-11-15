@@ -1,38 +1,39 @@
+import json
 import webbrowser
 import time
-from urllib.parse import urlparse
 
-FILENAME = "Sites.txt"   # numele fișierului cu URL-uri
-DELAY_BETWEEN = 0.5     # secunde între deschideri
+FILENAME = "Sites.txt"   # fișierul JSON cu categorii
+DELAY_BETWEEN = 0.5      # secunde între deschideri
 
-def normalize(url: str) -> str | None:
-    url = url.strip()
-    if not url or url.startswith("#"):
-        return None
-    parsed = urlparse(url)
-    if not parsed.scheme:
-        # dacă lipsește schema (http/https) adaugă http://
-        url = "http://" + url
-    return url
-
-def read_urls(filename: str):
+def load_sites(filename):
     with open(filename, "r", encoding="utf-8") as f:
-        for line in f:
-            n = normalize(line)
-            if n:
-                yield n
+        data = json.load(f)  # citește JSON-ul ca dict
+    return data
 
 def main():
-    urls = list(read_urls(FILENAME))
-    if not urls:
-        print(f"Nu am găsit URL-uri în {FILENAME}.")
+    data = load_sites(FILENAME)
+
+    # Afișăm categoriile
+    print("Categorii disponibile:")
+    for category in data.keys():
+        print(f" - {category}")
+
+    # Alegem categoria
+    chosen = input("Alege categoria: ").strip()
+
+    if chosen not in data:
+        print("Categoria nu există!")
         return
 
-    print(f"Deschid {len(urls)} site-uri în browserul implicit...")
+    urls = data[chosen]
+
+    print(f"Deschid {len(urls)} site-uri din categoria '{chosen}'...")
+
     for u in urls:
         webbrowser.open_new_tab(u)
         time.sleep(DELAY_BETWEEN)
 
 if __name__ == "__main__":
     main()
+
 
