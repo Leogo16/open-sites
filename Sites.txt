@@ -1,7 +1,10 @@
-# Site for scripting
+{
+  "python": [
+    "https://chatgpt.com/",
+    "https://github.com/Leogo16"
+  ],
+  "social": [
+    "https://www.tiktok.com/"
+  ]
+}
 
-https://chatgpt.com/
-https://ctipub-my.sharepoint.com/
-https://github.com/Leogo16
-https://pathfinder.w3schools.com/
-https://docs.python.org/3/
